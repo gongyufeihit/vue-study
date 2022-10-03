@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟一个数据检测</title>
+    <script type = "text/javascript" src = "../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>学生信息</h2>
+        <h3>姓名：{{student.name}}</h3>
+        <h3>年龄：{{student.age.rAge}} - {{student.age.sAge}}</h3>
+        <h3>爱好：</h3>
+        <ul>
+            <li v-for="(h, index) in student.hobby" :key="index">
+                {{h}}
+            </li>
+        </ul>
+        <h3>朋友：</h3>
+        <ul>
+            <li v-for="(f, index) in student.friends" :key="index">
+                {{f.name}} - {{f.age}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+
+    const vm = new Vue({
+        el:"#root",
+        data:{
+            student:{
+                name:'Tom',
+                age:{
+                    rAge:40,
+                    sAge:29
+                },
+                hobby:['唱','跳','rap','篮球'],
+                friends:[
+                    {name:'jerry',age:35},
+                    {name:'tony',age:36}
+                ]
+            }
+        }
+    })
+
+
+</script>
+</html>

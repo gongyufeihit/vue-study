@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分析生命周期</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>当前n = {{n}}</h2>
+        <button @click = 'add'>点我n+1</button>
+    </div>
+</body>
+<script type="text/javascript">
+    new Vue({
+        el:"#root",
+        data:{
+            n:1
+        },
+        methods:{
+            add(){
+                this.n++;
+            }
+        },
+        beforeCreate() {
+            console.log(this);
+            debugger;
+        },
+        created() {
+            console.log(this);
+            debugger;
+        },
+        beforeMount() {
+            console.log(this);
+            debugger;
+        },
+        //页面信息首次挂载完毕后
+        mounted(){
+
+        }
+    })
+
+    /* setInterval((opacity) => {
+        vm.opacity -= 0.01
+        if(vm.opacity <= 0){
+            vm.opacity = 1;
+        }
+    }, 16); */
+</script>
+</html>

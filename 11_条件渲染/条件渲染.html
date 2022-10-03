@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <style>
+        .basic{
+            height: 40px;
+            width: 200px;
+            color:crimson;
+            background-color: aqua;
+            font-size: 4opx;
+        }
+    </style>
+    <script type = "text/javascript" src = "../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2 v-show='a'>欢迎来到{{name}}1</h2>
+        <h2 v-if='a'>欢迎来到{{name}}2</h2>
+
+        <h2>当前的n值是{{n}}</h2>
+        <button @click="n++">点我n+1</button>
+
+        <div class ="basic" v-show="n%3 === 1">Angular</div>
+        <div class="basic" v-show="n%3 === 2">React</div>
+        <div class="basic" v-show="n%3 === 3">Vue</div>
+
+        <div class ="basic" v-if="n%3 === 1">Angular</div>
+        <div class="basic" v-else-if="n%3 === 2">React</div>
+        <div class="basic" v-else-if="n%3 === 3">Vue</div>
+        <div class="basic" v-else>删库跑路</div>
+
+        <template v-if="n%3===1">
+            <h2>嗨</h2>
+            <h2>害</h2>
+            <h2>嗨</h2>
+        </template>
+    </div>
+</body>
+<script type="text/javascript">
+    const vm = new Vue({
+        el:'#root',
+        data:{
+            name:'尚硅谷',
+            a:false,
+            n:0,
+        }
+    })
+</script>
+</html>
